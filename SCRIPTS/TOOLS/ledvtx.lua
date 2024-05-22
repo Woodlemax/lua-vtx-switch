@@ -113,6 +113,7 @@ local function processEnterPress()
     isItemActive = not isItemActive
   else
     state = BUSY
+	serialWrite(ledColor)
     config.save(ledColor, vtxBand, vtxChannel)
     com.sendLedVtxConfig(colorIds[ledColor], bandIds[vtxBand], vtxChannel, ledCount)
   end
